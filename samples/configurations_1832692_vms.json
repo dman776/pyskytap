@@ -1,0 +1,100 @@
+[
+
+  *
+    -
+    {
+      o "id": "3000570",
+      o "name": "End Users eLearning VM",
+      o "runstate": "running",
+      o
+        -
+        "hardware": {
+          + "cpus": 2,
+          + "ram": 2048,
+          + "svms": 2,
+          + "guestOS": "ubuntu-64",
+          + "max_cpus": 8,
+          + "min_ram": 256,
+          + "max_ram": 32768,
+          + "vnc_keymap": null,
+          + "uuid": null,
+          +
+            -
+            "disks": [
+              #
+                -
+                {
+                  * "id": "disk-1216214-2893396-scsi-0-0",
+                  * "size": 40960,
+                  * "type": "SCSI",
+                  * "controller": "0",
+                  * "lun": "0"
+                }
+            ],
+          + "storage": 40960,
+          + "upgradable": false,
+          + "instance_type": null
+        },
+      o "error": false,
+      o "asset_id": null,
+      o
+        -
+        "interfaces": [
+          +
+            -
+            {
+              # "id": "nic-1216214-2893396-0",
+              # "ip": "10.0.0.1",
+              # "hostname": "host1",
+              # "mac": "00:50:56:0E:06:1A",
+              # "services_count": 2,
+              #
+                -
+                "services": [
+                  *
+                    -
+                    {
+                      o "external_ip": "services-useast.skytap.com",
+                      o "internal_port": 22,
+                      o "id": "22",
+                      o "external_port": 17776
+                    },
+                  *
+                    -
+                    {
+                      o "external_ip": "services-useast.skytap.com",
+                      o "internal_port": 8080,
+                      o "id": "8080",
+                      o "external_port": 17049
+                    }
+                ],
+              # "public_ips_count": 0,
+              # "public_ips": [ ],
+              # "vm_id": "3000570",
+              # "status": "Running",
+              # "vm_name": "End Users eLearning VM",
+              # "network_subnet": "10.0.0.0/24",
+              # "network_type": "automatic",
+              # "network_name": "Network 1",
+              # "network_id": "1240124",
+              # "nic_type": "e1000"
+            }
+        ],
+      o "notes": [ ],
+      o "labels": [ ],
+      o "credentials": [ ],
+      o "desktop_resizable": true,
+      o "local_mouse_cursor": true,
+      o "maintenance_lock_engaged": false,
+      o "region_backend": "skytap",
+      o "can_change_object_state": true,
+      o "configuration_url":
+        "https://cloud.skytap.com/configurations/1832692",
+      o
+        -
+        "publish_set_refs": [
+          + "https://cloud.skytap.com/configurations/1832692/publish_sets/608468"
+        ]
+    }
+
+]

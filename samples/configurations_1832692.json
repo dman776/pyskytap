@@ -1,0 +1,180 @@
+{
+
+  * "id": "1832692",
+  * "url": "https://cloud.skytap.com/configurations/1832692",
+  * "name": "400453-9000-11281",
+  * "error": "",
+  * "runstate": "running",
+  * "description": "End Users eLearning VM",
+  * "suspend_on_idle": 300,
+  * "routable": false,
+  *
+    -
+    "vms": [
+      o
+        -
+        {
+          + "id": "3000570",
+          + "name": "End Users eLearning VM",
+          + "runstate": "running",
+          +
+            -
+            "hardware": {
+              # "cpus": 2,
+              # "ram": 2048,
+              # "svms": 2,
+              # "guestOS": "ubuntu-64",
+              # "max_cpus": 8,
+              # "min_ram": 256,
+              # "max_ram": 32768,
+              # "vnc_keymap": null,
+              # "uuid": null,
+              #
+                -
+                "disks": [
+                  *
+                    -
+                    {
+                      o "id": "disk-1216214-2893396-scsi-0-0",
+                      o "size": 40960,
+                      o "type": "SCSI",
+                      o "controller": "0",
+                      o "lun": "0"
+                    }
+                ],
+              # "storage": 40960,
+              # "upgradable": false,
+              # "instance_type": null
+            },
+          + "error": false,
+          + "asset_id": null,
+          +
+            -
+            "interfaces": [
+              #
+                -
+                {
+                  * "id": "nic-1216214-2893396-0",
+                  * "ip": "10.0.0.1",
+                  * "hostname": "host1",
+                  * "mac": "00:50:56:0E:06:1A",
+                  * "services_count": 2,
+                  *
+                    -
+                    "services": [
+                      o
+                        -
+                        {
+                          + "external_ip": "services-useast.skytap.com",
+                          + "internal_port": 22,
+                          + "external_port": 17776,
+                          + "id": "22"
+                        },
+                      o
+                        -
+                        {
+                          + "external_ip": "services-useast.skytap.com",
+                          + "internal_port": 8080,
+                          + "external_port": 17049,
+                          + "id": "8080"
+                        }
+                    ],
+                  * "public_ips_count": 0,
+                  * "public_ips": [ ],
+                  * "status": "Running",
+                  * "vm_name": "End Users eLearning VM",
+                  * "vm_id": "3000570",
+                  * "network_subnet": "10.0.0.0/24",
+                  * "network_type": "automatic",
+                  * "network_name": "Network 1",
+                  * "network_id": "1240124",
+                  * "nic_type": "e1000"
+                }
+            ],
+          + "notes": [ ],
+          + "labels": [ ],
+          + "credentials": [ ],
+          + "desktop_resizable": true,
+          + "local_mouse_cursor": true,
+          + "maintenance_lock_engaged": false,
+          + "region_backend": "skytap",
+          + "can_change_object_state": true,
+          + "configuration_url":
+            "https://cloud.skytap.com/configurations/1832692",
+          +
+            -
+            "publish_set_refs": [
+              # "https://cloud.skytap.com/configurations/1832692/publish_sets/608468"
+            ]
+        }
+    ],
+  *
+    -
+    "networks": [
+      o
+        -
+        {
+          + "id": "1240124",
+          + "url":
+            "https://cloud.skytap.com/configurations/1832692/networks/1240124",
+          + "name": "Network 1",
+          + "network_type": "automatic",
+          + "subnet": "10.0.0.0/24",
+          + "subnet_addr": "10.0.0.0",
+          + "subnet_size": 24,
+          + "gateway": "10.0.0.254",
+          + "primary_nameserver": null,
+          + "secondary_nameserver": null,
+          + "region": "US-East",
+          + "domain": "example.com",
+          + "vpn_attachments": [ ],
+          + "tunnelable": false,
+          + "tunnels": [ ]
+        }
+    ],
+  * "lockversion": "cd8f76b38101f155e82a1f4071fc37b1e3c215cb",
+  * "use_smart_client": true,
+  * "disable_internet": false,
+  * "region": "US-East",
+  * "region_backend": "skytap",
+  * "owner": "https://cloud.skytap.com/users/4225",
+  *
+    -
+    "publish_sets": [
+      o
+        -
+        {
+          + "id": "608468",
+          + "name": "Default",
+          + "url":
+            "https://cloud.skytap.com/configurations/1832692/publish_sets/608468",
+          + "publish_set_type": "multiple_url",
+          + "runtime_limit": null,
+          + "runtime_left_in_seconds": null,
+          + "expiration_date": null,
+          + "expiration_date_tz": null,
+          + "start_time": null,
+          + "end_time": null,
+          + "time_zone": null,
+          + "multiple_url": true,
+          + "password": null,
+          + "use_smart_client": true,
+          +
+            -
+            "vms": [
+              #
+                -
+                {
+                  * "id": "1466830",
+                  * "name": "End Users eLearning VM",
+                  * "access": "run_and_use",
+                  * "run_and_use": true,
+                  * "vm_ref": "https://cloud.skytap.com/vms/3000570",
+                  * "desktop_url":
+                    "https://cloud.skytap.com/vms/c6d680a76a85ec4fabbe260e86178f9f/desktop"
+                }
+            ]
+        }
+    ]
+
+}

@@ -1,0 +1,43 @@
+[
+
+  *
+    -
+    {
+      o "id": "nic-1216214-2893396-0",
+      o "ip": "10.0.0.1",
+      o "hostname": "host1",
+      o "mac": "00:50:56:0E:06:1A",
+      o "services_count": 2,
+      o
+        -
+        "services": [
+          +
+            -
+            {
+              # "external_ip": "services-useast.skytap.com",
+              # "internal_port": 22,
+              # "external_port": 17776,
+              # "id": "22"
+            },
+          +
+            -
+            {
+              # "external_ip": "services-useast.skytap.com",
+              # "internal_port": 8080,
+              # "external_port": 17049,
+              # "id": "8080"
+            }
+        ],
+      o "public_ips_count": 0,
+      o "public_ips": [ ],
+      o "status": "Running",
+      o "vm_name": "End Users eLearning VM",
+      o "vm_id": "3000570",
+      o "network_subnet": "10.0.0.0/24",
+      o "network_type": "automatic",
+      o "network_name": "Network 1",
+      o "network_id": "1240124",
+      o "nic_type": "e1000"
+    }
+
+]

@@ -1,0 +1,20 @@
+[
+
+  *
+    -
+    {
+      o "external_ip": "services-useast.skytap.com",
+      o "internal_port": 22,
+      o "id": "22",
+      o "external_port": 17776
+    },
+  *
+    -
+    {
+      o "external_ip": "services-useast.skytap.com",
+      o "internal_port": 8080,
+      o "id": "8080",
+      o "external_port": 17049
+    }
+
+]
