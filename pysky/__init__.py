@@ -27,10 +27,11 @@
 #
 #
 #--
-__all__ = ['Skytap', 'Configuration', 'Runstate']
+__all__ = ['skytap', 'configuration', 'runstate', 'PSException']
 
-from pysky_skytap import Skytap
-from pysky_configuration import Configuration
-from pysky_vms import Runstate
+from .pysky_skytap import skytap
+from .pysky_configuration import configuration
+from .pysky_vm import vm, runstate
+from .pysky_psexception import PSException
 
 

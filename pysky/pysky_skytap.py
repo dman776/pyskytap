@@ -30,13 +30,14 @@
 import sys
 import requests
 import json
-from pyskytap import Configuration
-##from pyskytap import VMS
+from .pysky_configuration import configuration
+from .pysky_psexception import PSException
+
 from pprint import pprint
 
 ##from pysky import PSException
 
-class Skytap():
+class skytap():
 
     def __init__(self):
         self.__logged = False
@@ -68,10 +69,8 @@ class Skytap():
 
         #Generate server's URL
         if not isinstance(host, basestring):
-            raise Exception("host URL error")
-            junk=junk
-        ##    raise PSException("'host' should be a string with the Skytap Cloud SDK url."
-        ##                     ,FaultTypes.PARAMETER_ERROR)
+            ##raise Exception("host URL error")
+            raise PSException("'host' should be a string with the Skytap Cloud SDK url.",FaultTypes.PARAMETER_ERROR)
 
         elif (host.lower().startswith('http://')
         or host.lower().startswith('https://')):
@@ -101,12 +100,13 @@ class Skytap():
     def disconnect(self):
         if self.__logged:
             self.__logged = False
-            
+                
     def get_configuration(self,id):
         api_response=self._api_get('/configurations/' + str(id))
         ##pprint (vars(api_response),indent=4)
         if api_response.status_code==200:
-            cfg = Configuration(json.loads(api_response.text))
+            cfg = configuration(json.loads(api_response.text))
+            ##cfg.set_skytap_instance(self)
         else:
             cfg = None
         return cfg
@@ -116,14 +116,21 @@ class Skytap():
     ''' 
     def _api_get(self,url_suffix):
         url=self.__server_url + url_suffix    
-        api_response = requests.get(url, headers=self.__headers, auth=self.__auth)
-        return api_response
+        
+        try:
+            api_response = requests.get(url, headers=self.__headers, auth=self.__auth)
+            return api_response
+        except requests.exceptions.ConnectionError:
+            ##raise PSException('message','code')
+            return {}
 
+    
     def _api_put(self,url_suffix,params):
         url=self.__server_url + url_suffix    
         api_response = requests.put(url, headers=self.__headers, auth=self.__auth, params=params)
         return api_response
 
+    
     def _api_post(self,url_suffix,params):
         url=self.__server_url + url_suffix    
         api_response = requests.post(url, headers=self.__headers, auth=self.__auth, params=params)

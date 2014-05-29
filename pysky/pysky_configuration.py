@@ -29,10 +29,11 @@
 
 import sys
 import json
-##from pyskytap import VMS
+from .pysky_vm import vm
+## from .pysky_skytap import skytap
 from pprint import pprint
 
-class Configuration():
+class configuration():
 
     def __init__(self, j_cfg):
     	## load object
@@ -41,29 +42,29 @@ class Configuration():
         self.__owner = self.__cfg['owner']
         self.__name = self.__cfg['name']
         self.__region = self.__cfg['region']
-        ##self.__vms = None
+        self.__vms = []
+        ##self.__skytap_instance = None
 
-    
-    def get_owner(self):
+    def owner(self):
         return self.__owner
 
-    def get_name(self):
+    def name(self):
         return self.__name
 
-    def get_region(self):
+    def region(self):
         return self.__region
 
-    def get_id(self):
+    def id(self):
         return self.__id
         
-    def get_vms(self):
+    def vms(self):
         ## get the ['vms'] list
         vmslist = self.__cfg['vms']
-        for vm in vmslist:
-            ## vmobj=VMS(vm)
-            self.__vms.append(vm)
+        for a_vm in vmslist:
+            vmobj=vm(a_vm)
+            ## vmobj.set_skytap_instance(self.__skytap_instance)
+            self.__vms.append(vmobj)
         return self.__vms
 
-    def dump(self):
-    	print json.dumps(self.__cfg,indent=4)
-    	return
+    def __str__(self):
+    	return json.dumps(self.__cfg,indent=4)
